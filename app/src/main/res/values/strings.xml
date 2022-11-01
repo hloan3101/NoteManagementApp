@@ -6,4 +6,8 @@
     <string name="hint_remember_me">Remember me</string>
     <string name="hint_sign_in">Sign In</string>
     <string name="hint_exit">Exit</string>
+    <string name="hint_sign_up">Sign Up</string>
+    <string name="hint_fist_name">First name</string>
+    <string name="hint_last_name">Last name</string>
+    <string name="hint_confirm_password">Confirm password</string>
 </resources>
