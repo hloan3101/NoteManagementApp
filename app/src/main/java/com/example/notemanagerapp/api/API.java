@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class API {
     private static Retrofit retrofit;
 
-    public static Retrofit getBaseResponse (){
+    public static Retrofit getAccount (){
         if (retrofit == null){
             retrofit = new Retrofit.Builder().baseUrl(Constants.baseURL)
                     .addConverterFactory(GsonConverterFactory.create()).build();
