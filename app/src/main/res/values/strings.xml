@@ -10,4 +10,13 @@
     <string name="hint_fist_name">First name</string>
     <string name="hint_last_name">Last name</string>
     <string name="hint_confirm_password">Confirm password</string>
+
+    <string name="require">REQUIRE</string>
+    <string name="email_format">Invalid email</string>
+    <string name="password_error">Incorrect password</string>
+    <string name="account_not_found">Account not found</string>
+    <string name="email_not_found">Email not found</string>
+    <string name="email_error">Email are not right</string>
+    <string name="email_exists">Email exists</string>
+    <string name="login_successfully">Login successfully</string>
 </resources>
