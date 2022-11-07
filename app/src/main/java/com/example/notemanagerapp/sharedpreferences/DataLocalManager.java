@@ -6,6 +6,7 @@ public class DataLocalManager {
 
     private static final String PREF_FIRST_INSTALL = "PREF_FIRST_INSTALL";
     private static final String CHECK_LOGOUT = "CHECK_LOGOUT";
+    private static final String CHECK_REMEMBER_ME = "CHECK_REMEMBER_ME";
     private static final String EMAIL = "EMAIL";
     private static final String PASSWORD = "PASSWORD";
     private static DataLocalManager instance;
@@ -39,16 +40,24 @@ public class DataLocalManager {
         return DataLocalManager.getInstance().mySharedPreferences.getBooleanValue(CHECK_LOGOUT);
     }
 
-    public static void setEmail (boolean email){
-        DataLocalManager.getInstance().mySharedPreferences.putBooleanValue(EMAIL, email);
+    public static void setCheckRememberMe (boolean isRememberMe){
+        DataLocalManager.getInstance().mySharedPreferences.putBooleanValue(CHECK_REMEMBER_ME, isRememberMe);
+    }
+
+    public static boolean getCheckRememberMe (){
+        return DataLocalManager.getInstance().mySharedPreferences.getBooleanValue(CHECK_REMEMBER_ME);
+    }
+
+    public static void setEmail (String email){
+        DataLocalManager.getInstance().mySharedPreferences.putStringValue(EMAIL, email);
     }
 
     public static String getEmail (){
         return DataLocalManager.getInstance().mySharedPreferences.getStringValue(EMAIL);
     }
 
-    public static void setPassword (boolean password){
-        DataLocalManager.getInstance().mySharedPreferences.putBooleanValue(PASSWORD, password);
+    public static void setPassword (String password){
+        DataLocalManager.getInstance().mySharedPreferences.putStringValue(PASSWORD, password);
     }
 
     public static String getPassword (){

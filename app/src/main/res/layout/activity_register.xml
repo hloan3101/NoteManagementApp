@@ -137,7 +137,7 @@
             app:layout_constraintTop_toBottomOf="@+id/activity_register_til_email">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/activity_register_password"
+                android:id="@+id/activity_register_et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_password"
@@ -161,7 +161,7 @@
             app:layout_constraintTop_toBottomOf="@+id/activity_register_til_password">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/activity_register_confirm_password"
+                android:id="@+id/activity_register_et_confirm_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_confirm_password"
