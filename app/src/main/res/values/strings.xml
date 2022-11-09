@@ -27,9 +27,15 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_logout">Logout</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_category">Category</string>
+    <string name="menu_priority">Priority</string>
+    <string name="menu_status">Status</string>
+    <string name="menu_note">Note</string>
+    <string name="menu_account">Account</string>
+    <string name="menu_edit_profile">Edit Profile</string>
+    <string name="menu_change_password">Change Password</string>
 </resources>

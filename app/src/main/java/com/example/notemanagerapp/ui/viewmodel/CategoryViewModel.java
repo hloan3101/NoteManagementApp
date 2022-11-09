@@ -1,4 +1,4 @@
-package com.example.notemanagerapp.ui.fragment;
+package com.example.notemanagerapp.ui.viewmodel;
 
 import androidx.lifecycle.ViewModel;
 

@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.notemanagerapp.R;
+import com.example.notemanagerapp.ui.viewmodel.CategoryViewModel;
 
 public class CategoryFragment extends Fragment {
 
