@@ -13,26 +13,26 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.notemanagerapp.R;
-import com.example.notemanagerapp.ui.viewmodel.HomeViewModel;
+import com.example.notemanagerapp.ui.viewmodel.ChangePasswordViewModel;
 
-public class HomeFragment extends Fragment {
+public class ChangePasswordFragment extends Fragment {
 
-    private HomeViewModel mViewModel;
+    private ChangePasswordViewModel mViewModel;
 
-    public static HomeFragment newInstance() {
-        return new HomeFragment();
+    public static ChangePasswordFragment newInstance() {
+        return new ChangePasswordFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_change_password, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(ChangePasswordViewModel.class);
         // TODO: Use the ViewModel
     }
 

@@ -13,26 +13,26 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.notemanagerapp.R;
-import com.example.notemanagerapp.ui.viewmodel.HomeViewModel;
+import com.example.notemanagerapp.ui.viewmodel.StatusViewModel;
 
-public class HomeFragment extends Fragment {
+public class StatusFragment extends Fragment {
 
-    private HomeViewModel mViewModel;
+    private StatusViewModel mViewModel;
 
-    public static HomeFragment newInstance() {
-        return new HomeFragment();
+    public static StatusFragment newInstance() {
+        return new StatusFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_status, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(StatusViewModel.class);
         // TODO: Use the ViewModel
     }
 
