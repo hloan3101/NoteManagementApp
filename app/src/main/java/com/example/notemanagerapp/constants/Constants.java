@@ -7,4 +7,6 @@ public class Constants {
     public static final int ERROR = -1;
     public static final int PASSWORD_ERROR = 2;
     public static final int NOT_FIND_ACCOUNT = 1;
+
+    public static final int DELETE_SUCCESSFUL = 1;
 }

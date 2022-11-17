@@ -2,6 +2,8 @@ package com.example.notemanagerapp.ui.fragment;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,14 +16,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.notemanagerapp.R;
 import com.example.notemanagerapp.adapter.DetailItemNoteAdapter;
+import com.example.notemanagerapp.constants.Constants;
 import com.example.notemanagerapp.databinding.FragmentCategoryBinding;
+import com.example.notemanagerapp.model.BaseResponse;
 import com.example.notemanagerapp.model.DetailItemNote;
 import com.example.notemanagerapp.ui.viewmodel.CategoryViewModel;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class CategoryFragment extends Fragment {
 
@@ -64,6 +73,35 @@ public class CategoryFragment extends Fragment {
                  DetailItemNote category = detailItemNoteList.get(position);
 
                  if (direction == ItemTouchHelper.RIGHT){
+                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+
+                     builder.setTitle(getString(R.string.title_dialog));
+                     builder.setMessage(getString(R.string.massage_dialog));
+                     builder.setCancelable(false);
+
+                    builder.setPositiveButton(getString(R.string.yes_dialog),
+                            new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            viewModel.deleteDetailItemNote(category).enqueue(
+                                    new Callback<BaseResponse>() {
+                                @Override
+                                public void onResponse(Call<BaseResponse> call,
+                                                       Response<BaseResponse> response) {
+                                    if (response.body() != null){
+                                        deleteCategory(response.body());
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(Call<BaseResponse> call, Throwable t) {
+                                    Toast.makeText(requireContext(), t.getMessage(),
+                                            Toast.LENGTH_LONG).show();
+                                }
+                            });
+
+                        }
+                    });
 
                  }else {
 
@@ -72,6 +110,16 @@ public class CategoryFragment extends Fragment {
          }).attachToRecyclerView(binding.fragmentCategoryRv);
 
         return view;
+    }
+
+    private void deleteCategory (BaseResponse response){
+        if (response.getStatus() == Constants.DELETE_SUCCESSFUL){
+            Toast.makeText(getContext(), getString(R.string.delete_successfully),
+                    Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getContext(), getString(R.string.delete_error),
+                    Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override

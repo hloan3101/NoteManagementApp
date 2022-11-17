@@ -38,4 +38,13 @@
     <string name="menu_account">Account</string>
     <string name="menu_edit_profile">Edit Profile</string>
     <string name="menu_change_password">Change Password</string>
+    
+    <string name="add">Add</string>
+    <string name="title_dialog">Confirm</string>
+    <string name="massage_dialog">Are you sure</string>
+    <string name="yes_dialog">Yes</string>
+    <string name="no_dialog">No</string>
+
+    <string name="delete_successfully">Delete successfully</string>
+    <string name="delete_error">Cannot delete</string>
 </resources>
