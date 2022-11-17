@@ -56,14 +56,13 @@ public class DetailItemNoteRepository {
         return data;
     }
 
-    public Call<BaseResponse> addDetailItemNote (String tab, DetailItemNote detailItemNote){
-        return detailItemNoteService.addDetailItemNote(tab, detailItemNote.getEmail(),
-                detailItemNote.getName());
+    public Call<BaseResponse> addDetailItemNote (String tab, String name){
+        return detailItemNoteService.addDetailItemNote(tab, DataLocalManager.getEmail(), name);
     }
 
-    public Call<BaseResponse> updateDetailItemNote(String tab, DetailItemNote detailItemNote, String newName){
-        return detailItemNoteService.updateDetailItemNote(tab, detailItemNote.getEmail(),
-                detailItemNote.getName(), newName);
+    public Call<BaseResponse> updateDetailItemNote(String tab, String name, String newName){
+        return detailItemNoteService.updateDetailItemNote(tab, DataLocalManager.getEmail(),
+                name, newName);
     }
 
     public Call<BaseResponse> deleteDetailItemNote(String tab, DetailItemNote detailItemNote){

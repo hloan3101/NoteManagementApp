@@ -1,5 +1,6 @@
 package com.example.notemanagerapp.ui.fragment;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.app.AlertDialog;
@@ -24,6 +25,7 @@ import com.example.notemanagerapp.constants.Constants;
 import com.example.notemanagerapp.databinding.FragmentCategoryBinding;
 import com.example.notemanagerapp.model.BaseResponse;
 import com.example.notemanagerapp.model.DetailItemNote;
+import com.example.notemanagerapp.ui.dialog.AddCategoryNoteDialog;
 import com.example.notemanagerapp.ui.viewmodel.CategoryViewModel;
 
 import java.util.List;
@@ -103,17 +105,38 @@ public class CategoryFragment extends Fragment {
                         }
                     });
 
-                 }else {
+                    builder.setNegativeButton(getString(R.string.no_dialog),
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    viewModel.refreshLiveData();
+                                    dialogInterface.cancel();
+                                }
+                            });
 
+                    AlertDialog dialog =builder.create();
+                    dialog.show();
+
+                 }else {
+                     callAddDetailItemDialog(getString( R.string.edit));
+                     viewModel.refreshLiveData();
                  }
              }
          }).attachToRecyclerView(binding.fragmentCategoryRv);
+
+         binding.fragmentCategoryBtnAdd.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 callAddDetailItemDialog(getString(R.string.add));
+                 viewModel.refreshLiveData();
+             }
+         });
 
         return view;
     }
 
     private void deleteCategory (BaseResponse response){
-        if (response.getStatus() == Constants.DELETE_SUCCESSFUL){
+        if (response.getStatus() == Constants.SUCCESSFUL){
             Toast.makeText(getContext(), getString(R.string.delete_successfully),
                     Toast.LENGTH_LONG).show();
         } else {
@@ -126,5 +149,17 @@ public class CategoryFragment extends Fragment {
     public void onResume() {
         super.onResume();
         viewModel.refreshLiveData();
+    }
+
+    private void callAddDetailItemDialog(String str){
+        DialogFragment dialogFragment = AddCategoryNoteDialog.newInstance();
+
+        Bundle bundle =  new Bundle();
+        bundle.putString(getString(R.string.checkEdit),str);
+        bundle.putString(getString(R.string.typeDetailItemNote), Constants.TAB_CATEGORY);
+
+        dialogFragment.setArguments(bundle);
+
+        dialogFragment.show(getActivity().getSupportFragmentManager(), "AddDetailItemNoteDialog");
     }
 }

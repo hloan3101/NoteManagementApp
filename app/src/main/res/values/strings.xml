@@ -21,6 +21,7 @@
     <string name="email_error">Email are not right</string>
     <string name="email_exists">Email exists</string>
     <string name="login_successfully">Login successfully</string>
+    <string name="name_exists">Name exists</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -38,13 +39,20 @@
     <string name="menu_account">Account</string>
     <string name="menu_edit_profile">Edit Profile</string>
     <string name="menu_change_password">Change Password</string>
-    
-    <string name="add">Add</string>
+
     <string name="title_dialog">Confirm</string>
     <string name="massage_dialog">Are you sure</string>
     <string name="yes_dialog">Yes</string>
     <string name="no_dialog">No</string>
+    <string name="edit">Edit</string>
+    <string name="name">Name</string>
+    <string name="add">Add</string>
+    <string name="checkEdit">checkEdit</string>
+    <string name="typeDetailItemNote">typeDetailItemNote</string>
 
     <string name="delete_successfully">Delete successfully</string>
+    <string name="add_successfully">Add successfully</string>
     <string name="delete_error">Cannot delete</string>
+    <string name="add_error">Cannot add</string>
+
 </resources>
