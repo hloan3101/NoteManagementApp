@@ -7,6 +7,7 @@ public class DataLocalManager {
     private static final String PREF_FIRST_INSTALL = "PREF_FIRST_INSTALL";
     private static final String CHECK_LOGOUT = "CHECK_LOGOUT";
     private static final String CHECK_REMEMBER_ME = "CHECK_REMEMBER_ME";
+    private static final String CHECK_EDIT = "CHECK_EDIT";
     private static final String EMAIL = "EMAIL";
     private static final String PASSWORD = "PASSWORD";
     private static DataLocalManager instance;
@@ -46,6 +47,14 @@ public class DataLocalManager {
 
     public static boolean getCheckRememberMe (){
         return DataLocalManager.getInstance().mySharedPreferences.getBooleanValue(CHECK_REMEMBER_ME);
+    }
+
+    public static void setCheckEdit (boolean isEdit){
+        DataLocalManager.getInstance().mySharedPreferences.putBooleanValue(CHECK_EDIT, isEdit);
+    }
+
+    public static boolean getCheckEdit (){
+        return DataLocalManager.getInstance().mySharedPreferences.getBooleanValue(CHECK_EDIT);
     }
 
     public static void setEmail (String email){

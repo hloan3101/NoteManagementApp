@@ -1,4 +1,4 @@
-package com.example.notemanagerapp.viewmodel;
+package com.example.notemanagerapp.ui.viewmodel;
 
 import android.app.Application;
 

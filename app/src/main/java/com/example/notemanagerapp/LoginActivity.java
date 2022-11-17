@@ -13,11 +13,10 @@ import com.example.notemanagerapp.databinding.ActivityLoginBinding;
 import com.example.notemanagerapp.model.Account;
 import com.example.notemanagerapp.model.BaseResponse;
 import com.example.notemanagerapp.sharedpreferences.DataLocalManager;
-import com.example.notemanagerapp.viewmodel.AccountViewModel;
+import com.example.notemanagerapp.ui.viewmodel.AccountViewModel;
 
 import java.util.regex.Pattern;
 
-import okhttp3.internal.Util;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

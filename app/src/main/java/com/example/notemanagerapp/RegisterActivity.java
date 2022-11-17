@@ -13,7 +13,7 @@ import com.example.notemanagerapp.databinding.ActivityRegisterBinding;
 import com.example.notemanagerapp.model.Account;
 import com.example.notemanagerapp.model.BaseResponse;
 import com.example.notemanagerapp.sharedpreferences.DataLocalManager;
-import com.example.notemanagerapp.viewmodel.AccountViewModel;
+import com.example.notemanagerapp.ui.viewmodel.AccountViewModel;
 
 import java.util.regex.Pattern;
 
