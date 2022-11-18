@@ -26,19 +26,19 @@ public class CategoryViewModel extends AndroidViewModel {
         liveData = repository.getListDetailItemNote(Constants.TAB_CATEGORY);
     }
 
-    public LiveData<List<DetailItemNote>> getListDetailItemNote (){
+    public LiveData<List<DetailItemNote>> getListCategoryItem (){
         return liveData;
     }
 
-    public Call<BaseResponse> addDetailItemNote (String name){
+    public Call<BaseResponse> addCategoryItem(String name){
         return repository.addDetailItemNote(Constants.TAB_CATEGORY, name);
     }
 
-    public Call<BaseResponse> updateDetailItemNote (String name, String newName){
+    public Call<BaseResponse> updateCategoryItem (String name, String newName){
         return repository.updateDetailItemNote(Constants.TAB_CATEGORY, name, newName);
     }
 
-    public Call<BaseResponse> deleteDetailItemNote (DetailItemNote detailItemNote){
+    public Call<BaseResponse> deleteCategoryItem (DetailItemNote detailItemNote){
         return repository.deleteDetailItemNote(Constants.TAB_CATEGORY, detailItemNote);
     }
 

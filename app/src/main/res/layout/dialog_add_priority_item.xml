@@ -5,18 +5,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".ui.dialog.AddCategoryNoteDialog">
+    tools:context=".ui.dialog.AddPriorityItemDialog">
 
     <TextView
+        android:id="@+id/dialog_add_priority_item_name_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:textColor="@color/primary"
+        android:textColor="@color/black"
         android:gravity="center"
         android:layout_marginTop="8dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/dialog_add_category_til_name"
+        android:id="@+id/dialog_add_priority_item_til_name"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,7 +27,7 @@
         app:endIconMode="clear_text">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/dialog_add_category_et_name"
+            android:id="@+id/dialog_add_priority_item_et_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Name"
@@ -35,7 +36,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/dialog_add_category_btn_add"
+        android:id="@+id/dialog_add_priority_item_btn_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -47,7 +48,7 @@
         android:background="@drawable/custom_round_boder"/>
 
     <Button
-        android:id="@+id/dialog_add_category_btn_close"
+        android:id="@+id/dialog_add_priority_item_btn_close"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
