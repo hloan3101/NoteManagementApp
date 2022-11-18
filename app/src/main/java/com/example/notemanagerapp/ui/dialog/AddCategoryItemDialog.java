@@ -15,7 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.notemanagerapp.R;
 import com.example.notemanagerapp.constants.Constants;
-import com.example.notemanagerapp.databinding.DialogAddCategoryNoteBinding;
+import com.example.notemanagerapp.databinding.DialogAddCategoryItemBinding;
 import com.example.notemanagerapp.model.BaseResponse;
 import com.example.notemanagerapp.ui.viewmodel.CategoryViewModel;
 
@@ -24,31 +24,31 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class AddCategoryNoteDialog extends DialogFragment {
+public class AddCategoryItemDialog extends DialogFragment {
 
     private final String EDIT = "Edit";
     private final String ADD = "Add";
-    private DialogAddCategoryNoteBinding binding;
+    private DialogAddCategoryItemBinding binding;
     private CategoryViewModel model;
 
-    public static AddCategoryNoteDialog newInstance (){
-        return new AddCategoryNoteDialog();
+    public static AddCategoryItemDialog newInstance (){
+        return new AddCategoryItemDialog();
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        binding = DialogAddCategoryNoteBinding.inflate(inflater, container, false);
+        binding = DialogAddCategoryItemBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
         setCancelable(false);
         initView();
 
-        binding.dialogAddCategoryBtnAdd.setOnClickListener(new View.OnClickListener() {
+        binding.dialogAddCategoryItemBtnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (binding.dialogAddCategoryBtnAdd.getText().toString().trim().equals(EDIT)){
+                if (binding.dialogAddCategoryItemBtnAdd.getText().toString().trim().equals(EDIT)){
                     editCategoryItem();
                 } else {
                     addCategoryItem();
@@ -56,7 +56,7 @@ public class AddCategoryNoteDialog extends DialogFragment {
             }
         });
 
-        binding.dialogAddCategoryBtnClose.setOnClickListener(new View.OnClickListener() {
+        binding.dialogAddCategoryItemBtnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dismiss();
@@ -67,14 +67,21 @@ public class AddCategoryNoteDialog extends DialogFragment {
     }
 
     private void initView(){
-        binding.dialogAddCategoryBtnAdd.setText(getArguments().getString(
-                getString(R.string.check_edit)));
+        String str = getArguments().getString(getString(R.string.check_edit));
+        binding.dialogAddCategoryItemBtnAdd.setText(str);
+
+        if (str.equals(EDIT)){
+            binding.dialogAddCategoryItemNameDialog.setText(getString(R.string.edit_category_dialog));
+        }else {
+            binding.dialogAddCategoryItemNameDialog.setText(getString(R.string.add_category_dialog));
+        }
+
         model = new ViewModelProvider(getActivity()).get(CategoryViewModel.class);
     }
 
     private boolean checkInput (){
-        if (binding.dialogAddCategoryEtName.getText().toString().trim().isEmpty()){
-            binding.dialogAddCategoryTilName.setError(getString(R.string.require));
+        if (binding.dialogAddCategoryItemEtName.getText().toString().trim().isEmpty()){
+            binding.dialogAddCategoryItemTilName.setError(getString(R.string.require));
             return false;
         }
 
@@ -86,7 +93,7 @@ public class AddCategoryNoteDialog extends DialogFragment {
              return;
          }
 
-         model.addCategoryItem(binding.dialogAddCategoryEtName.getText().toString().trim())
+         model.addCategoryItem(binding.dialogAddCategoryItemEtName.getText().toString().trim())
                  .enqueue(new Callback<BaseResponse>() {
              @Override
              public void onResponse(Call<BaseResponse> call, Response<BaseResponse> response) {
@@ -97,7 +104,7 @@ public class AddCategoryNoteDialog extends DialogFragment {
                          model.refreshLiveData();
                          dismiss();
                      }else {
-                         binding.dialogAddCategoryTilName.setError(getString(R.string.name_exists));
+                         binding.dialogAddCategoryItemTilName.setError(getString(R.string.name_exists));
                          Toast.makeText(getContext(), getString(R.string.add_error),
                                  Toast.LENGTH_LONG).show();
                      }
@@ -117,7 +124,7 @@ public class AddCategoryNoteDialog extends DialogFragment {
         }
 
         model.updateCategoryItem(getArguments().getString(getString(R.string.name_category)),
-                binding.dialogAddCategoryEtName.getText().toString().trim()).enqueue(
+                binding.dialogAddCategoryItemEtName.getText().toString().trim()).enqueue(
                 new Callback<BaseResponse>() {
                     @Override
                     public void onResponse(Call<BaseResponse> call, Response<BaseResponse> response) {

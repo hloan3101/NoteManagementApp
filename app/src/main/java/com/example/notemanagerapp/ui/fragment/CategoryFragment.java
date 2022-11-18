@@ -25,7 +25,7 @@ import com.example.notemanagerapp.constants.Constants;
 import com.example.notemanagerapp.databinding.FragmentCategoryBinding;
 import com.example.notemanagerapp.model.BaseResponse;
 import com.example.notemanagerapp.model.DetailItemNote;
-import com.example.notemanagerapp.ui.dialog.AddCategoryNoteDialog;
+import com.example.notemanagerapp.ui.dialog.AddCategoryItemDialog;
 import com.example.notemanagerapp.ui.viewmodel.CategoryViewModel;
 
 import java.util.List;
@@ -112,13 +112,13 @@ public class CategoryFragment extends Fragment {
                                     viewModel.refreshLiveData();
                                     dialogInterface.cancel();
                                 }
-                            });
+                    });
 
                     AlertDialog dialog =builder.create();
                     dialog.show();
 
                  }else {
-                     callAddDetailItemDialog(getString( R.string.edit), category.getName());
+                     callAddCategoryItemDialog(getString( R.string.edit), category.getName());
                      viewModel.refreshLiveData();
                  }
              }
@@ -127,7 +127,7 @@ public class CategoryFragment extends Fragment {
          binding.fragmentCategoryBtnAdd.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 callAddDetailItemDialog(getString(R.string.add), getString(R.string.name_category));
+                 callAddCategoryItemDialog(getString(R.string.add), getString(R.string.name_category));
                  viewModel.refreshLiveData();
              }
          });
@@ -151,8 +151,8 @@ public class CategoryFragment extends Fragment {
         viewModel.refreshLiveData();
     }
 
-    private void callAddDetailItemDialog(String str, String nameCategory){
-        DialogFragment dialogFragment = AddCategoryNoteDialog.newInstance();
+    private void callAddCategoryItemDialog(String str, String nameCategory){
+        DialogFragment dialogFragment = AddCategoryItemDialog.newInstance();
 
         Bundle bundle =  new Bundle();
         bundle.putString(getString(R.string.check_edit),str);
@@ -160,6 +160,6 @@ public class CategoryFragment extends Fragment {
 
         dialogFragment.setArguments(bundle);
 
-        dialogFragment.show(getActivity().getSupportFragmentManager(), "AddDetailItemNoteDialog");
+        dialogFragment.show(getActivity().getSupportFragmentManager(), "AddCategoryItemDialog");
     }
 }
