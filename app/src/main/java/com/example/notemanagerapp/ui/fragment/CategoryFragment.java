@@ -55,7 +55,7 @@ public class CategoryFragment extends Fragment {
          binding.fragmentCategoryRv.setAdapter(adapter);
 
          viewModel = new ViewModelProvider(getActivity()).get(CategoryViewModel.class);
-         viewModel.getListDetailItemNote().observe(getViewLifecycleOwner(), categories -> {
+         viewModel.getListCategoryItem().observe(getViewLifecycleOwner(), categories -> {
              adapter.setDetailItemNoteList(categories);
          });
 
@@ -85,7 +85,7 @@ public class CategoryFragment extends Fragment {
                             new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            viewModel.deleteDetailItemNote(category).enqueue(
+                            viewModel.deleteCategoryItem(category).enqueue(
                                     new Callback<BaseResponse>() {
                                 @Override
                                 public void onResponse(Call<BaseResponse> call,
@@ -118,7 +118,7 @@ public class CategoryFragment extends Fragment {
                     dialog.show();
 
                  }else {
-                     callAddDetailItemDialog(getString( R.string.edit));
+                     callAddDetailItemDialog(getString( R.string.edit), category.getName());
                      viewModel.refreshLiveData();
                  }
              }
@@ -127,7 +127,7 @@ public class CategoryFragment extends Fragment {
          binding.fragmentCategoryBtnAdd.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 callAddDetailItemDialog(getString(R.string.add));
+                 callAddDetailItemDialog(getString(R.string.add), getString(R.string.name_category));
                  viewModel.refreshLiveData();
              }
          });
@@ -151,12 +151,12 @@ public class CategoryFragment extends Fragment {
         viewModel.refreshLiveData();
     }
 
-    private void callAddDetailItemDialog(String str){
+    private void callAddDetailItemDialog(String str, String nameCategory){
         DialogFragment dialogFragment = AddCategoryNoteDialog.newInstance();
 
         Bundle bundle =  new Bundle();
-        bundle.putString(getString(R.string.checkEdit),str);
-        bundle.putString(getString(R.string.typeDetailItemNote), Constants.TAB_CATEGORY);
+        bundle.putString(getString(R.string.check_edit),str);
+        bundle.putString(getString(R.string.name_category), nameCategory);
 
         dialogFragment.setArguments(bundle);
 
