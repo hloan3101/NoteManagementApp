@@ -49,7 +49,7 @@ public class AddPriorityItemDialog extends DialogFragment {
             @Override
             public void onClick(View view) {
                 if (binding.dialogAddPriorityItemBtnAdd.getText().toString().trim().equals(EDIT)){
-                    editCategoryItem();
+                    editPriorityItem();
                 } else {
                     addPriorityItem();
                 }
@@ -72,6 +72,7 @@ public class AddPriorityItemDialog extends DialogFragment {
 
         if (str.equals(EDIT)){
             binding.dialogAddPriorityItemNameDialog.setText(getString(R.string.edit_priority_dialog));
+            binding.dialogAddPriorityItemEtName.setText(getArguments().getString(getString(R.string.name_priority)));
         }else {
             binding.dialogAddPriorityItemNameDialog.setText(getString(R.string.add_priority_dialog));
         }
@@ -118,7 +119,7 @@ public class AddPriorityItemDialog extends DialogFragment {
          });
     }
 
-    private void editCategoryItem(){
+    private void editPriorityItem(){
         if(!checkInput()){
             return;
         }

@@ -15,48 +15,48 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.notemanagerapp.R;
 import com.example.notemanagerapp.constants.Constants;
-import com.example.notemanagerapp.databinding.DialogAddCategoryItemBinding;
+import com.example.notemanagerapp.databinding.DialogAddStatusItemBinding;
 import com.example.notemanagerapp.model.BaseResponse;
-import com.example.notemanagerapp.ui.viewmodel.CategoryViewModel;
+import com.example.notemanagerapp.ui.viewmodel.StatusViewModel;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class AddCategoryItemDialog extends DialogFragment {
+public class AddStatusItemDialog extends DialogFragment {
 
     private final String EDIT = "Edit";
     private final String ADD = "Add";
-    private DialogAddCategoryItemBinding binding;
-    private CategoryViewModel model;
+    private DialogAddStatusItemBinding binding;
+    private StatusViewModel model;
 
-    public static AddCategoryItemDialog newInstance (){
-        return new AddCategoryItemDialog();
+    public static AddStatusItemDialog newInstance (){
+        return new AddStatusItemDialog();
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        binding = DialogAddCategoryItemBinding.inflate(inflater, container, false);
+        binding = DialogAddStatusItemBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
         setCancelable(false);
         initView();
 
-        binding.dialogAddCategoryItemBtnAdd.setOnClickListener(new View.OnClickListener() {
+        binding.dialogAddStatusItemBtnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (binding.dialogAddCategoryItemBtnAdd.getText().toString().trim().equals(EDIT)){
-                    editCategoryItem();
+                if (binding.dialogAddStatusItemBtnAdd.getText().toString().trim().equals(EDIT)){
+                    editStatusItem();
                 } else {
-                    addCategoryItem();
+                    addStatusItem();
                 }
             }
         });
 
-        binding.dialogAddCategoryItemBtnClose.setOnClickListener(new View.OnClickListener() {
+        binding.dialogAddStatusItemBtnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dismiss();
@@ -68,34 +68,34 @@ public class AddCategoryItemDialog extends DialogFragment {
 
     private void initView(){
         String str = getArguments().getString(getString(R.string.check_edit));
-        binding.dialogAddCategoryItemBtnAdd.setText(str);
+        binding.dialogAddStatusItemBtnAdd.setText(str);
 
         if (str.equals(EDIT)){
-            binding.dialogAddCategoryItemNameDialog.setText(getString(R.string.edit_category_dialog));
-            binding.dialogAddCategoryItemEtName.setText(getArguments().getString(
-                    getString(R.string.name_category)));
+            binding.dialogAddStatusItemNameDialog.setText(getString(R.string.edit_status_dialog));
+            binding.dialogAddStatusItemEtName.setText(getArguments().getString(
+                    getString(R.string.name_status)));
         }else {
-            binding.dialogAddCategoryItemNameDialog.setText(getString(R.string.add_category_dialog));
+            binding.dialogAddStatusItemNameDialog.setText(getString(R.string.add_status_dialog));
         }
 
-        model = new ViewModelProvider(getActivity()).get(CategoryViewModel.class);
+        model = new ViewModelProvider(getActivity()).get(StatusViewModel.class);
     }
 
     private boolean checkInput (){
-        if (binding.dialogAddCategoryItemEtName.getText().toString().trim().isEmpty()){
-            binding.dialogAddCategoryItemTilName.setError(getString(R.string.require));
+        if (binding.dialogAddStatusItemEtName.getText().toString().trim().isEmpty()){
+            binding.dialogAddStatusItemTilName.setError(getString(R.string.require));
             return false;
         }
 
         return true;
     }
 
-    private void addCategoryItem(){
+    private void addStatusItem(){
          if (!checkInput()){
              return;
          }
 
-         model.addCategoryItem(binding.dialogAddCategoryItemEtName.getText().toString().trim())
+         model.addStatusItem(binding.dialogAddStatusItemEtName.getText().toString().trim())
                  .enqueue(new Callback<BaseResponse>() {
              @Override
              public void onResponse(Call<BaseResponse> call, Response<BaseResponse> response) {
@@ -105,8 +105,9 @@ public class AddCategoryItemDialog extends DialogFragment {
                                  Toast.LENGTH_LONG).show();
                          model.refreshLiveData();
                          dismiss();
+
                      }else {
-                         binding.dialogAddCategoryItemTilName.setError(getString(R.string.name_exists));
+                         binding.dialogAddStatusItemEtName.setError(getString(R.string.name_exists));
                          Toast.makeText(getContext(), getString(R.string.add_error),
                                  Toast.LENGTH_LONG).show();
                      }
@@ -120,13 +121,13 @@ public class AddCategoryItemDialog extends DialogFragment {
          });
     }
 
-    private void editCategoryItem(){
+    private void editStatusItem(){
         if(!checkInput()){
             return;
         }
 
-        model.updateCategoryItem(getArguments().getString(getString(R.string.name_category)),
-                binding.dialogAddCategoryItemEtName.getText().toString().trim()).enqueue(
+        model.updateStatusItem(getArguments().getString(getString(R.string.name_status)),
+                binding.dialogAddStatusItemEtName.getText().toString().trim()).enqueue(
                 new Callback<BaseResponse>() {
                     @Override
                     public void onResponse(Call<BaseResponse> call, Response<BaseResponse> response) {

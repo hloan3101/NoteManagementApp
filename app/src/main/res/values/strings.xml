@@ -42,8 +42,10 @@
 
     <string name="edit_category_dialog">Edit Category</string>
     <string name="edit_priority_dialog">Edit Priority</string>
+    <string name="edit_status_dialog">Edit Status</string>
     <string name="add_category_dialog">Add Category</string>
     <string name="add_priority_dialog">Add Priority</string>
+    <string name="add_status_dialog">Add Status</string>
     <string name="title_dialog">Confirm</string>
     <string name="massage_dialog">Are you sure</string>
     <string name="yes_dialog">Yes</string>
@@ -54,6 +56,7 @@
     <string name="check_edit">checkEdit</string>
     <string name="name_category">nameCategory</string>
     <string name="name_priority">namePriority</string>
+    <string name="name_status">nameStatus</string>
 
     <string name="delete_successfully">Delete successfully</string>
     <string name="add_successfully">Add successfully</string>

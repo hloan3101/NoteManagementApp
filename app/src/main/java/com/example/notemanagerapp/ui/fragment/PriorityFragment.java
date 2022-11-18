@@ -25,7 +25,6 @@ import com.example.notemanagerapp.constants.Constants;
 import com.example.notemanagerapp.databinding.FragmentPriorityBinding;
 import com.example.notemanagerapp.model.BaseResponse;
 import com.example.notemanagerapp.model.DetailItemNote;
-import com.example.notemanagerapp.ui.dialog.AddCategoryItemDialog;
 import com.example.notemanagerapp.ui.dialog.AddPriorityItemDialog;
 import com.example.notemanagerapp.ui.viewmodel.PriorityViewModel;
 
