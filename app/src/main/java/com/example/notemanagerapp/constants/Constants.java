@@ -6,6 +6,7 @@ public class Constants {
     public static final String TAB_PRIORITY = "Priority";
     public static final String TAB_STATUS = "Status";
     public static final String TAB_NOTE = "Note";
+    public static final String TAB_DASHBOARD = "Dashboard";
 
     public static final int ERROR = -1;
     public static final int PASSWORD_ERROR = 2;
