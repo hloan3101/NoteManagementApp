@@ -57,6 +57,8 @@
     <string name="name_category">nameCategory</string>
     <string name="name_priority">namePriority</string>
     <string name="name_status">nameStatus</string>
+    <string name="name_note">nameNote</string>
+    <string name="plan_date">planDate</string>
 
     <string name="delete_successfully">Delete successfully</string>
     <string name="add_successfully">Add successfully</string>
