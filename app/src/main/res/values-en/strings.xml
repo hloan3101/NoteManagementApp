@@ -1,8 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">NoteManagerApp</string>
     <string name="login_title">Already have an account</string>
-    <string name="hint_email" translatable="false">Email</string>
-    <string name="hint_new_email">New email</string>
     <string name="hint_password">Password</string>
     <string name="hint_remember_me">Remember me</string>
     <string name="hint_sign_in">Sign In</string>
@@ -11,9 +10,6 @@
     <string name="hint_fist_name">First name</string>
     <string name="hint_last_name">Last name</string>
     <string name="hint_confirm_password">Confirm password</string>
-
-    <string name="email_pattern" translatable="false">[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})
-    </string>
     <string name="require">REQUIRE</string>
     <string name="email_format">Invalid email</string>
     <string name="password_error">Incorrect password</string>
@@ -23,30 +19,6 @@
     <string name="email_exists">Email exists</string>
     <string name="login_successfully">Login successfully</string>
     <string name="name_exists">Name exists</string>
-    <string name="title_activity_home" translatable="false">HomeActivity</string>
-    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
-    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-    <string name="nav_header_title" translatable="false">Android Studio</string>
-    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
-    <string name="nav_header_desc" translatable="false">Navigation header</string>
-    <string name="action_exit" translatable="false">Exit</string>
-    <string name="action_logout" translatable="false">Logout</string>
-    <string name="exit">Exit</string>
-    <string name="logout">Logout</string>
-    <string name="change">Change</string>
-    <string name="current_password">Current password</string>
-    <string name="new_password">New password</string>
-    <string name="confirm_new_password">Confirm new password</string>
-
-    <string name="menu_home">Home</string>
-    <string name="menu_category">Category</string>
-    <string name="menu_priority">Priority</string>
-    <string name="menu_status">Status</string>
-    <string name="menu_note">Note</string>
-    <string name="menu_account">Account</string>
-    <string name="menu_edit_profile">Edit Profile</string>
-    <string name="menu_change_password">Change Password</string>
-
     <string name="edit_category_dialog">Edit Category</string>
     <string name="edit_priority_dialog">Edit Priority</string>
     <string name="edit_status_dialog">Edit Status</string>
@@ -59,25 +31,33 @@
     <string name="no_dialog">No</string>
     <string name="edit">Edit</string>
     <string name="name">Name</string>
-    <string name="created_date">Created date</string>
     <string name="add">Add</string>
-    <string name="check_edit" translatable="false">checkEdit</string>
-    <string name="name_category" translatable="false">nameCategory</string>
-    <string name="name_priority" translatable="false">namePriority</string>
-    <string name="name_status" translatable="false">nameStatus</string>
-    <string name="name_note" translatable="false">nameNote</string>
-    <string name="plan_date">Plan Date</string>
-
     <string name="delete_successfully">Delete successfully</string>
     <string name="add_successfully">Add successfully</string>
     <string name="edit_successfully">Edit successfully</string>
     <string name="edit_profile_successfully">Edit profile successfully</string>
-    <string name="change_password_successfully">Change password successfully</string>
     <string name="delete_error">Delete failed</string>
-    <string name="add_error">Add failed</string>
     <string name="edit_error">Edit failed</string>
+    <string name="add_error">Add failed</string>
     <string name="edit_profile_error">Edit profile failed</string>
     <string name="change_password_error">Change password failed</string>
-
+    <string name="change_password_successfully">Change password successfully</string>
+    <string name="exit">Exit</string>
+    <string name="logout">Logout</string>
+    <string name="hint_new_email">New email</string>
+    <string name="change">Change</string>
+    <string name="current_password">Current password</string>
+    <string name="confirm_new_password">Confirm new password</string>
+    <string name="new_password">New password</string>
+    <string name="created_date">Created date</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_category">Category</string>
+    <string name="menu_priority">Priority</string>
+    <string name="menu_status">Status</string>
+    <string name="menu_note">Note</string>
+    <string name="menu_account">Account</string>
+    <string name="menu_edit_profile">Edit Profile</string>
+    <string name="menu_change_password">Change Password</string>
+    <string name="plan_date">Plan date</string>
     <string name="the_progress_of_notes">The progress of notes</string>
 </resources>

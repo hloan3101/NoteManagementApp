@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:hint="First name" />
+                android:hint="@string/hint_fist_name" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -48,7 +48,7 @@
                 android:id="@+id/fragment_edit_profile_et_last_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Last name"
+                android:hint="@string/hint_last_name"
                 android:textSize="20sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,7 +67,7 @@
                 android:id="@+id/fragment_edit_profile_et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
+                android:hint="@string/hint_email"
                 android:textSize="20sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,7 +86,7 @@
                 android:id="@+id/fragment_edit_profile_et_new_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="New email"
+                android:hint="@string/hint_new_email"
                 android:textSize="20sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,7 +98,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/custom_round_boder"
-            android:text="Change"
+            android:text="@string/edit"
             android:textAllCaps="false"
             android:textColor="#fff"
             android:textSize="20sp" />
@@ -111,7 +111,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/custom_round_boder"
-            android:text="Home"
+            android:text="@string/menu_home"
             android:textAllCaps="false"
             android:textColor="#fff"
             android:textSize="20sp" />

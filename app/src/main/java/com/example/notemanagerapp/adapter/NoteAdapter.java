@@ -41,12 +41,13 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder>{
             return;
         }
 
-        holder.tvName.setText("Name: " + note.getName());
-        holder.tvCategory.setText("Category: " + note.getCategory());
-        holder.tvPriority.setText("Priority: " + note.getPriority());
-        holder.tvStatus.setText("Status: " + note.getStatus());
-        holder.tvPlanDate.setText("Plan date: " + note.getPlanDate());
-        holder.tvCreatedDate.setText("Created date: " + note.getCreatedDate());
+        holder.tvName.setText(holder.tvName.getText().toString() + ": " + note.getName());
+        holder.tvCategory.setText(holder.tvCategory.getText().toString() + ": "+ note.getCategory());
+        holder.tvPriority.setText(holder.tvPriority.getText().toString() + ": "+ note.getPriority());
+        holder.tvStatus.setText(holder.tvStatus.getText().toString() + ": " + note.getStatus());
+        holder.tvPlanDate.setText(holder.tvPlanDate.getText().toString() + ": " + note.getPlanDate());
+        holder.tvCreatedDate.setText(holder.tvCreatedDate.getText().toString()
+                + ": "+ note.getCreatedDate());
     }
 
     @Override

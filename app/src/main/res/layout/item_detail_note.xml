@@ -18,7 +18,7 @@
             android:id="@+id/item_detail_note_tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/name"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_detail_note_tv_name"
             android:layout_marginTop="10dp"
-            android:text="TextView"
+            android:text="@string/created_date"
             android:textColor="@color/black"
             android:textSize="20sp" />
     </RelativeLayout>
