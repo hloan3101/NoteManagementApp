@@ -57,37 +57,35 @@ public class RegisterActivity extends AppCompatActivity {
         boolean checkData = true;
 
         if (binding.activityRegisterEtFirstName.getText().toString().trim().isEmpty()){
-            binding.activityRegisterTilFirstName.setError(getResources().getString(R.string.require));
+            binding.activityRegisterTilFirstName.setError(getString(R.string.require));
             checkData = false;
         }
 
         if (binding.activityRegisterEtLastName.getText().toString().trim().isEmpty()){
-            binding.activityRegisterTilLastName.setError(getResources().getString(R.string.require));
+            binding.activityRegisterTilLastName.setError(getString(R.string.require));
             checkData = false;
         }
 
         if (binding.activityRegisterEtEmail.getText().toString().trim().isEmpty()){
             binding.activityRegisterTilEmail.setError(getResources().getString(R.string.require));
             checkData = false;
-        } else if (!Pattern.matches(getResources().getString(R.string.email_pattern),
+        } else if (!Pattern.matches(getString(R.string.email_pattern),
                 binding.activityRegisterEtEmail.getText().toString().trim())){
-            binding.activityRegisterTilEmail.setError(getResources().getString(R.string.email_format));
+            binding.activityRegisterTilEmail.setError(getString(R.string.email_format));
             checkData = false;
         }
 
         if (binding.activityRegisterEtPassword.getText().toString().trim().isEmpty()){
-            binding.activityRegisterTilPassword.setError(getResources().getString(R.string.require));
+            binding.activityRegisterTilPassword.setError(getString(R.string.require));
             checkData = false;
         }
 
         if (binding.activityRegisterEtConfirmPassword.getText().toString().trim().isEmpty()){
-            binding.activityRegisterTilConfirmPassword.setError(getResources()
-                    .getString(R.string.require));
+            binding.activityRegisterTilConfirmPassword.setError(getString(R.string.require));
             checkData = false;
         } else if (!binding.activityRegisterEtPassword.getText().toString().trim()
                 .equals(binding.activityRegisterEtConfirmPassword.getText().toString().trim())){
-            binding.activityRegisterTilConfirmPassword.setError(getResources()
-                    .getString(R.string.password_error));
+            binding.activityRegisterTilConfirmPassword.setError(getString(R.string.password_error));
             checkData = false;
         }
 
@@ -111,8 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
                 BaseResponse baseResponse = response.body();
                 if (baseResponse != null){
                     if (baseResponse.getStatus() == Constants.ERROR){
-                        binding.activityRegisterTilEmail.setError(getResources()
-                                .getString(R.string.email_exists));
+                        binding.activityRegisterTilEmail.setError(getString(R.string.email_exists));
                     } else{
                         DataLocalManager.setEmail(account.getEmail());
                         DataLocalManager.setPassword(account.getPassword());

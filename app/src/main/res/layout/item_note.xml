@@ -18,7 +18,7 @@
             android:id="@+id/item_note_tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/name"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -28,9 +28,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_note_tv_name"
             android:layout_marginTop="10dp"
-            android:text="TextView"
-            android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:text="@string/menu_category"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/item_note_tv_priority"
@@ -38,9 +38,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_note_tv_category"
             android:layout_marginTop="10dp"
-            android:text="TextView"
-            android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:text="@string/menu_priority"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/item_note_tv_status"
@@ -48,9 +48,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_note_tv_priority"
             android:layout_marginTop="10dp"
-            android:text="TextView"
-            android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:text="@string/menu_status"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/item_note_tv_plane_date"
@@ -58,9 +58,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_note_tv_status"
             android:layout_marginTop="10dp"
-            android:text="TextView"
-            android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:text="@string/plan_date"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/item_note_tv_created_date"
@@ -68,9 +68,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_note_tv_plane_date"
             android:layout_marginTop="10dp"
-            android:text="TextView"
-            android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:text="@string/created_date"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

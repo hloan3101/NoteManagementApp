@@ -47,7 +47,7 @@ public class HomeFragment extends Fragment {
         binding.fragmentHomePieChart.setUsePercentValues(true);
         binding.fragmentHomePieChart.setEntryLabelTextSize(12);
         binding.fragmentHomePieChart.setEntryLabelColor(Color.BLACK);
-        binding.fragmentHomePieChart.setCenterText("The progress of notes");
+        binding.fragmentHomePieChart.setCenterText(getString(R.string.the_progress_of_notes));
         binding.fragmentHomePieChart.setCenterTextSize(24);
         binding.fragmentHomePieChart.getDescription().setEnabled(false);
 
@@ -84,7 +84,7 @@ public class HomeFragment extends Fragment {
                 colors.add(color);
             }
 
-            PieDataSet dataSet = new PieDataSet(entries, "Note");
+            PieDataSet dataSet = new PieDataSet(entries, getString(R.string.menu_note));
             dataSet.setColors(colors);
 
             PieData data = new PieData(dataSet);

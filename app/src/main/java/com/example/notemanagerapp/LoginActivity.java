@@ -90,16 +90,16 @@ public class LoginActivity extends AppCompatActivity {
         boolean checkData = true;
 
         if (binding.activityLoginEtEmail.getText().toString().trim().isEmpty()) {
-            binding.activityLoginTilEmail.setError(getResources().getString(R.string.require));
+            binding.activityLoginTilEmail.setError(getString(R.string.require));
             checkData = false;
-        } else if (!Pattern.matches(getResources().getString(R.string.email_pattern),
+        } else if (!Pattern.matches(getString(R.string.email_pattern),
                 binding.activityLoginEtEmail.getText().toString().trim())) {
-            binding.activityLoginTilEmail.setError(getResources().getString(R.string.email_format));
+            binding.activityLoginTilEmail.setError(getString(R.string.email_format));
             checkData = false;
         }
 
         if (binding.activityLoginEtPassword.getText().toString().trim().isEmpty()) {
-            binding.activityLoginTilPassword.setError(getResources().getString(R.string.require));
+            binding.activityLoginTilPassword.setError(getString(R.string.require));
             checkData = false;
         }
 
@@ -120,15 +120,15 @@ public class LoginActivity extends AppCompatActivity {
                 if (baseResponse != null){
                     if (baseResponse.getStatus() == Constants.ERROR){
                         if (baseResponse.getError() == Constants.PASSWORD_ERROR){
-                            binding.activityLoginTilPassword.setError(getResources().
+                            binding.activityLoginTilPassword.setError(
                                     getString(R.string.password_error));
                         }
                         else {
-                            Toast.makeText(LoginActivity.this, getResources().getString
+                            Toast.makeText(LoginActivity.this, getString
                                     (R.string.account_not_found), Toast.LENGTH_LONG).show();
 
-                            binding.activityLoginTilEmail.setError(getResources().getString(R.string.require));
-                            binding.activityLoginTilPassword.setError(getResources().getString(R.string.require));
+                            binding.activityLoginTilEmail.setError(getString(R.string.require));
+                            binding.activityLoginTilPassword.setError(getString(R.string.require));
                         }
                     }
                     else {

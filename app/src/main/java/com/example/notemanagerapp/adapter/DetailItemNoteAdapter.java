@@ -40,8 +40,9 @@ public class DetailItemNoteAdapter extends RecyclerView.Adapter<DetailItemNoteAd
             return;
         }
 
-        holder.tvName.setText("Name: " + detailItemNote.getName());
-        holder.tvCreatedDate.setText("Created date: "+detailItemNote.getDateCreate());
+        holder.tvName.setText(holder.tvName.getText().toString() + ": " + detailItemNote.getName());
+        holder.tvCreatedDate.setText(holder.tvCreatedDate.getText().toString()
+                + ": " +detailItemNote.getDateCreate());
     }
 
     @Override
