@@ -33,4 +33,9 @@ public class AccountRepository {
         return accountService.editProfile(Constants.TAB_PROFILE, DataLocalManager.getEmail(),
                 account.getEmail(), account.getFirstName(), account.getLastName());
     }
+
+    public Call<BaseResponse> changePassword(String newPassword){
+        return accountService.changePassword(Constants.TAB_PROFILE,
+                DataLocalManager.getEmail(), DataLocalManager.getPassword(), newPassword);
+    }
 }

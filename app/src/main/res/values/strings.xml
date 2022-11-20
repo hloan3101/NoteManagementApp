@@ -64,9 +64,11 @@
     <string name="add_successfully">Add successfully</string>
     <string name="edit_successfully">Edit successfully</string>
     <string name="edit_profile_successfully">Edit profile successfully</string>
+    <string name="change_password_successfully">Change password successfully</string>
     <string name="delete_error">Cannot delete</string>
     <string name="add_error">Cannot add</string>
     <string name="edit_error">Cannot edit</string>
-    <string name="edit_profile_error">Cannot edit profile successfully</string>
+    <string name="edit_profile_error">Cannot edit profile</string>
+    <string name="change_password_error">Cannot change password</string>
 
 </resources>

@@ -41,9 +41,18 @@ public class EditProfileFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         binding = FragmentEditProfileBinding.inflate(inflater, container, false);
-        viewModel = new ViewModelProvider(getActivity()).get(EditProfileViewModel.class);
 
         initView();
+
+        return binding.getRoot();
+    }
+
+    private void initView (){
+        viewModel = new ViewModelProvider(getActivity()).get(EditProfileViewModel.class);
+
+        binding.fragmentEditProfileEtFirstName.setText(DataLocalManager.getFirstName());
+        binding.fragmentEditProfileEtLastName.setText(DataLocalManager.getLastname());
+        binding.fragmentEditProfileEtEmail.setText(DataLocalManager.getEmail());
 
         binding.fragmentEditProfileBtnHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,18 +67,10 @@ public class EditProfileFragment extends Fragment {
                 editProfile();
             }
         });
-
-        return binding.getRoot();
-    }
-
-    private void initView (){
-        binding.fragmentEditProfileEtFirstName.setText(DataLocalManager.getFirstName());
-        binding.fragmentEditProfileEtLastName.setText(DataLocalManager.getLastname());
-        binding.fragmentEditProfileEtEmail.setText(DataLocalManager.getEmail());
     }
 
     private boolean checkInput (){
-        resetData();
+        resetInput();
 
         boolean checkData = true;
 
@@ -104,7 +105,7 @@ public class EditProfileFragment extends Fragment {
         return checkData;
     }
 
-    private void resetData (){
+    private void resetInput(){
         binding.fragmentEditProfileTilFirstName.setError(null);
         binding.fragmentEditProfileTilLastName.setError(null);
         binding.fragmentEditProfileTilEmail.setError(null);
