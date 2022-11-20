@@ -1,29 +1,28 @@
 package com.example.notemanagerapp.model;
 
 public class Info {
-    private String fistName, lastName;
 
-    public Info() {
+    private String FirstName;
+    private String LastName;
+
+    public Info(String firstName, String lastName) {
+        FirstName = firstName;
+        LastName = lastName;
     }
 
-    public Info(String fistName, String lastName) {
-        this.fistName = fistName;
-        this.lastName = lastName;
+    public String getFirstName() {
+        return FirstName;
     }
 
-    public String getFistName() {
-        return fistName;
-    }
-
-    public void setFistName(String fistName) {
-        this.fistName = fistName;
+    public void setFirstName(String firstName) {
+        FirstName = firstName;
     }
 
     public String getLastName() {
-        return lastName;
+        return LastName;
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        LastName = lastName;
     }
 }

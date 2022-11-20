@@ -136,6 +136,9 @@ public class LoginActivity extends AppCompatActivity {
                         DataLocalManager.setPassword(account.getPassword());
                         DataLocalManager.setCheckRememberMe(isCheckedRemember());
                         DataLocalManager.setCheckLogout(false);
+                        DataLocalManager.setFirstname(baseResponse.getInfo().getFirstName());
+                        DataLocalManager.setLastname(baseResponse.getInfo().getLastName());
+
                         callActivityHome();
                     }
                 }

@@ -10,6 +10,9 @@ public class DataLocalManager {
     private static final String CHECK_EDIT = "CHECK_EDIT";
     private static final String EMAIL = "EMAIL";
     private static final String PASSWORD = "PASSWORD";
+    private static final String FIRSTNAME = "FIRSTNAME";
+    private static final String LASTNAME = "LASTNAME";
+
     private static DataLocalManager instance;
     private MySharedPreferences mySharedPreferences;
 
@@ -49,14 +52,6 @@ public class DataLocalManager {
         return DataLocalManager.getInstance().mySharedPreferences.getBooleanValue(CHECK_REMEMBER_ME);
     }
 
-    public static void setCheckEdit (boolean isEdit){
-        DataLocalManager.getInstance().mySharedPreferences.putBooleanValue(CHECK_EDIT, isEdit);
-    }
-
-    public static boolean getCheckEdit (){
-        return DataLocalManager.getInstance().mySharedPreferences.getBooleanValue(CHECK_EDIT);
-    }
-
     public static void setEmail (String email){
         DataLocalManager.getInstance().mySharedPreferences.putStringValue(EMAIL, email);
     }
@@ -73,5 +68,19 @@ public class DataLocalManager {
         return DataLocalManager.getInstance().mySharedPreferences.getStringValue(PASSWORD);
     }
 
+    public static void setFirstname(String firstName){
+        DataLocalManager.getInstance().mySharedPreferences.putStringValue(FIRSTNAME, firstName);
+    }
 
+    public static String getFirstName (){
+        return DataLocalManager.getInstance().mySharedPreferences.getStringValue(FIRSTNAME);
+    }
+
+    public static void setLastname (String lastName){
+        DataLocalManager.getInstance().mySharedPreferences.putStringValue(LASTNAME, lastName);
+    }
+
+    public static String getLastname (){
+        return DataLocalManager.getInstance().mySharedPreferences.getStringValue(LASTNAME);
+    }
 }

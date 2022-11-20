@@ -18,6 +18,7 @@ public interface AccountService {
 
     @GET("update")
     Call<BaseResponse> editProfile (@Query("tab") String tab, @Query("email") String email,
+                                    @Query("nemail") String newEmail,
                                     @Query("firstname") String firstname,
                                     @Query("lastname") String lastname);
 
